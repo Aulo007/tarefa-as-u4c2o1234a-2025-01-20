@@ -21,3 +21,31 @@ void keypad_init(void)
         gpio_put(linhas[i], 1);
     }
 }
+
+char keypad_read(void)
+{
+    char teclado[4][4] = {
+        {'1', '2', '3', 'A'},
+        {'4', '5', '6', 'B'},
+        {'7', '8', '9', 'C'},
+        {'*', '0', '#', 'D'}};
+
+    for (int i = 0; i < 4; i++)
+    {
+        gpio_put(linhas[i], 0);
+        sleep_ms(1);
+
+        for (int j = 0; j < 4; j++)
+        {
+            if (gpio_get(colunas[j]) == 0)
+            {
+                gpio_put(linhas[i], 1);
+                return teclado[i][j];
+            }
+        }
+
+        gpio_put(linhas[i], 1);
+    }
+
+    return 'X';
+}
