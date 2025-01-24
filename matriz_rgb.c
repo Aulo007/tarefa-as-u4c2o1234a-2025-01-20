@@ -59,4 +59,15 @@ void setMatrizDeLEDSComIntensidade(int matriz[5][5][3], double intensidadeR, dou
         }
     }
 }
+void npWrite()
+{
+    // Escreve cada dado de 8-bits dos pixels em sequência no buffer da máquina PIO.
+    for (uint i = 0; i < LED_COUNT; ++i)
+    {
+        pio_sm_put_blocking(np_pio, sm, leds[i].G);
+        pio_sm_put_blocking(np_pio, sm, leds[i].R);
+        pio_sm_put_blocking(np_pio, sm, leds[i].B);
+    }
+    sleep_us(100); // Espera 100us, sinal de RESET do datasheet.
+}
 
