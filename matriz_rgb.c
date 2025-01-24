@@ -32,3 +32,31 @@ void npInit(uint8_t pin)
     npClear();
 }
 
+void setMatrizDeLEDSComIntensidade(int matriz[5][5][3], double intensidadeR, double intensidadeG, double intensidadeB)
+{
+    // Validação das intensidades
+    intensidadeR = (intensidadeR < 0.0 || intensidadeR > 1.0) ? 1.0 : intensidadeR;
+    intensidadeG = (intensidadeG < 0.0 || intensidadeG > 1.0) ? 1.0 : intensidadeG;
+    intensidadeB = (intensidadeB < 0.0 || intensidadeB > 1.0) ? 1.0 : intensidadeB;
+
+    // Loop para configurar os LEDs
+    for (uint8_t linha = 0; linha < 5; linha++)
+    {
+        for (uint8_t coluna = 0; coluna < 5; coluna++)
+        {
+            // Calcula os valores RGB ajustados pela intensidade
+            uint8_t r = (uint8_t)(matriz[linha][coluna][0] * intensidadeR);
+            uint8_t g = (uint8_t)(matriz[linha][coluna][1] * intensidadeG);
+            uint8_t b = (uint8_t)(matriz[linha][coluna][2] * intensidadeB);
+
+            // Endereçamento linear para calcular o índice do LED
+            uint index = linha * 5 + coluna;
+
+            // Configura o LED diretamente
+            leds[index].R = r;
+            leds[index].G = g;
+            leds[index].B = b;
+        }
+    }
+}
+
