@@ -13,4 +13,10 @@
 #define ROW3 11
 #define ROW4 10
 
+// Função para inicializar o teclado
+void keypad_init(void);
+
+// Função para ler tecla pressionada
+char keypad_read(void);
+
 #endif // KEYPAD_H
