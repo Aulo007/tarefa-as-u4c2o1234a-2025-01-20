@@ -32,6 +32,7 @@ int main()
             break;
         case 'A':
             printf("Botão A apertado\n");
+            npClear();
             break;
         }
     }
