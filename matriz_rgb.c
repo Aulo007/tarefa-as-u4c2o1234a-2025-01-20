@@ -49,8 +49,8 @@ void setMatrizDeLEDSComIntensidade(int matriz[5][5][3], double intensidadeR, dou
             uint8_t g = (uint8_t)(matriz[linha][coluna][1] * intensidadeG);
             uint8_t b = (uint8_t)(matriz[linha][coluna][2] * intensidadeB);
 
-            // Endereçamento linear para calcular o índice do LED
-            uint index = linha * 5 + coluna;
+            // Usa getIndex para obter o índice correto do LED
+            uint index = getIndex(coluna, linha);
 
             // Configura o LED diretamente
             leds[index].R = r;
@@ -59,6 +59,7 @@ void setMatrizDeLEDSComIntensidade(int matriz[5][5][3], double intensidadeR, dou
         }
     }
 }
+
 void npWrite()
 {
     // Escreve cada dado de 8-bits dos pixels em sequência no buffer da máquina PIO.
