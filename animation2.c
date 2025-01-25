@@ -100,7 +100,7 @@ int caixa_de_entrada[15][25] = {{
 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 
 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000
 }};
-uint8_t matriz[15][5][5][3] = {
+uint8_t matriz2[15][5][5][3] = {
 {
 {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}}, 
 {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}},
@@ -200,7 +200,7 @@ void animar_desenhos_2(void){
   for(int i=0;i<15;i++){
     for(int j = 0;j<5;j++){
       for(int k = 0;k<5;k++){
-        convertToRGB(caixa_de_entrada[i][((j*5)+k)], matriz[i][j][k]);
+        convertToRGB(caixa_de_entrada[i][((j*5)+k)], matriz2[i][j][k]);
       }
     }
   }
@@ -217,7 +217,7 @@ void animar_desenhos_2(void){
           npClear2();
           break;
         }
-        npWrite2(matriz[i]);
+        npWrite2(matriz2[i]);
         sleep_ms(200);
     }
   }
