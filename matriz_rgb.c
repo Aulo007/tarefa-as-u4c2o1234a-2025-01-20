@@ -112,5 +112,4 @@ void npWrite2(uint8_t matriz[5][5][3]){ // Escreve cada elemento do formato RGB 
         }
       }
     }
-    sleep_us(100); // Espera 100us, sinal de RESET do datasheet.
 }
