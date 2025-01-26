@@ -6,6 +6,8 @@
 #include "animation9.h"
 #include "animationB.h"
 #include "animationC.h"
+#include "animationD.h"
+
 
 int main()
 {
@@ -47,6 +49,10 @@ int main()
         case 'C':
             printf("Botão C apertado\n");
             animar_desenhos_C();
+            break;
+        case 'D':
+            printf("Botão D apertado\n");
+            animar_desenhos_D();
             break;
         }
     }
