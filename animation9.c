@@ -74,7 +74,7 @@ void animar_desenhos_9(void)
         if (key_atual != key_atual && key_atual != 'X')
         {
             npClear(); // Limpa os LEDs
-            break;    
+            return;    
         }
 
         for (int i = 0; i < DESENHOS; i++)
@@ -84,7 +84,7 @@ void animar_desenhos_9(void)
             if (key_atual != key_atual && key_atual != 'X')
             {
                 npClear(); // Limpa os LEDs
-                break;    
+                return;    
             }
 
             setMatrizDeLEDSComIntensidade(caixa_de_desenhos[i], 1, 1, 1);
