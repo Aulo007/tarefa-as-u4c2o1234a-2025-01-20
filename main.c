@@ -19,7 +19,7 @@ MenuOption main_menu[] = {
     {'B', "Ligar todos os LEDs na cor azul na intensidade máxima"},
     {'C', "Ligar todos os LEDs na cor vermelha na intensidade de 80%"},
     {'D', "Ligar todos os LEDs na cor verde na intensidade de 50%"},
-    {'#', "Ligar todos os LEDs na cor branca na intensidade de 20%"}};
+    {'#', "Ligar todos os LEDs na cor branca na intensidade de 20%"},};
 
 int main()
 {
@@ -35,68 +35,100 @@ int main()
     bool mostra_menu = true;
 
     char key = 'X';
+    char key_atual = 'O';
 
     npWrite(); // Escreve os dados nos LEDs.
     do
     {
         key = keypad_read();
-        if (menu_is_valid_option(main_menu, sizeof(main_menu) / sizeof(MenuOption), key))
+        if (key != key_atual && key != 'X')
         {
-            switch (key)
+
+            if (menu_is_valid_option(main_menu, sizeof(main_menu) / sizeof(MenuOption), key))
             {
-            case '1':
-                printf("Tocando primeira animação... \n");
-                break;
+                switch (key)
+                {
+                case '1':
 
-            case '2':
-                printf("Tocando segunda animação... \n");
-                break;
+                    mostra_menu = true;
+                    key_atual = '1';
+                    break;
 
-            case '3':
-                printf("Tocando terceira animação... \n");
-                break;
-            case '4':
-                printf("Tocando quarta animação... \n");
-                break;
-            case '5':
-                printf("Tocando quinta animação... \n");
-                break;
-            case '6':
-                printf("Tocando sexta animação... \n");
-                break;
+                case '2':
 
-            case '7':
-                printf("Tocanodo sétima animação... \n");
-                break;
+                    mostra_menu = true;
+                    key_atual = '2';
+                    break;
 
-            case '8':
-                printf("Tocando oitava animação... \n");
-                break;
+                case '3':
 
-            case '9':
-                printf("Tocanodi nona animação... \n");
-                animar_desenhos_9(key);
-                break;
-            case 'A':
-                printf("Desliganod os leds... n");
-                npClear();
-                break;
+                    mostra_menu = true;
+                    key_atual = '3';
+                    break;
+                case '4':
 
-            case 'B':
-                printf("Ligando todos os leds na cor azul na intensidade máxima... \n");
-                break;
+                    mostra_menu = true;
+                    key_atual = '4';
+                    break;
+                case '5':
 
-            case 'C':
-                printf("Ligando todos os leds na cor vermelha na intensidade de 80%... \n");
-                break;
+                    mostra_menu = true;
+                    key_atual = '5';
 
-            case 'D':
-                printf("Ligando todos os leds na cor verde na intensidade de 50%... \n");
-                break;
-            case '#':
-                printf("Ligando todos os leds na cor branca na intensidade de 20%... \n");
-                break;
+                    break;
+                case '6':
 
+                    mostra_menu = true;
+                    key_atual = '6';
+                    break;
+
+                case '7':
+
+                    mostra_menu = true;
+                    key_atual = '7';
+                    break;
+
+                case '8':
+
+                    mostra_menu = true;
+                    key_atual = '8';
+                    break;
+
+                case '9':
+
+                    animar_desenhos_9(key);
+                    mostra_menu = true;
+                    key_atual = '9';
+                    break;
+                case 'A':
+
+                    npClear();
+                    mostra_menu = true;
+                    key_atual = 'A';
+                    break;
+
+                case 'B':
+
+                    mostra_menu = true;
+                    key_atual = 'B';
+                    break;
+
+                case 'C':
+
+                    mostra_menu = true;
+                    key_atual = 'C';
+                    break;
+
+                case 'D':
+
+                    mostra_menu = true;
+                    key_atual = 'D';
+                    break;
+                case '#':
+                    mostra_menu = true;
+                    key_atual = '#';
+                    break;
+                }
                 if (mostra_menu)
                 {
                     menu_display(main_menu, sizeof(main_menu) / sizeof(MenuOption));

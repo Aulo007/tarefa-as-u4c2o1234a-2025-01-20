@@ -16,7 +16,7 @@ bool menu_is_valid_option(const MenuOption *options, int num_options, char input
 void menu_display(const MenuOption *options, int num_options)
 {
     printf("\033[2J\033[H");
-    system("clear");
+    system("cls");
     printf("=== Sistema Iniciado ===\n");
     printf("Pressione uma tecla para escolher uma opcao:\n\n");
 
