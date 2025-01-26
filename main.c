@@ -34,6 +34,7 @@ int main()
             printf("Botão 2 apertado\n");
             animar_desenhos_2();
             break;
+
         case '9':
             printf("Botão 9 apertado\n");
             animar_desenhos_9();
@@ -42,6 +43,7 @@ int main()
             printf("Botão A apertado\n");
             npClear();
             break;
+
         case 'B':
             printf("Botão B apertado\n");
             animar_desenhos_B();
