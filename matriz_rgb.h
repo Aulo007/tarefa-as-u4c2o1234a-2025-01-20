@@ -16,6 +16,5 @@ void npWrite();
 void setMatrizDeLEDSComIntensidade(int matriz[5][5][3], double intensidadeR, double intensidadeG, double intensidadeB);
 int getIndex(int x, int y);
 void npWrite2(uint8_t matriz[5][5][3]);
-void npClear2();
 
 #endif // MATRIZ_RGB_H
