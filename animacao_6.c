@@ -10,7 +10,7 @@
 #define DESENHOS 9 // Quantidade de desenhos que terá a sua animação
 
 // FRASE: EMBARCA TECH:
-int caixa_de_desenhos[10][ROWS][COLS][COLORS] = {
+int caixa_de_desenhos6[10][ROWS][COLS][COLORS] = {
     {{{0, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {0, 0, 0}},
     {{0, 0, 0}, {255, 0, 0}, {0, 0, 0}, {255, 0, 0}, {0, 0, 0}},
     {{0, 0, 0}, {255, 0, 0}, {0, 0, 0}, {255, 0, 0}, {0, 0, 0}},
@@ -94,7 +94,7 @@ void animar_desenhos_6(void)
                 return;    // Sai da animação se a tecla for diferente de '1'
             }
 
-            setMatrizDeLEDSComIntensidade(caixa_de_desenhos[i], 1.0, 1, 1);
+            setMatrizDeLEDSComIntensidade(caixa_de_desenhos6[i], 1.0, 1, 1);
             npWrite();         // Atualiza a matriz de LEDs
             sleep_ms(2000); // Controla o tempo entre cada quadro
         }
