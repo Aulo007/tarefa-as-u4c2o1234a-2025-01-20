@@ -208,13 +208,11 @@ void animar_desenhos_2(void){
   while(true){
     tecla = keypad_read();
     if((tecla != '2')&&(tecla !='X')){
-        npClear2();
         break;
     }
     for(int i = 0;i<15;i++){
       tecla = keypad_read();
         if((tecla != '2')&&(tecla !='X')){
-          npClear2();
           break;
         }
         npWrite2(matriz2[i]);
