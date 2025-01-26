@@ -31,10 +31,13 @@ int main()
     keypad_init();
     npClear();
 
-    char key = '0';
+    menu_display(main_menu, sizeof(main_menu) / sizeof(MenuOption));
+    bool mostra_menu = true;
+
+    char key = 'X';
 
     npWrite(); // Escreve os dados nos LEDs.
-    while (true)
+    do 
     {
         key = keypad_read();
         switch (key)
@@ -52,5 +55,5 @@ int main()
             npClear();
             break;
         }
-    }
+    } while (true);
 }
