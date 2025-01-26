@@ -95,8 +95,9 @@ int getIndex(int x, int y)
         return 24 - (y * 5 + (4 - x)); // Linha ímpar (direita para esquerda).
     }
 }
-void npWrite2(uint8_t matriz[5][5][3]){
-    int i=0,j=0;
+
+void npWrite2(uint8_t matriz[5][5][3]){ // Escreve cada elemento do formato RGB como informação de 8-bit em sequência no buffer da máquina PIO.
+    int i=0,j=0;                        // Faz ainda a conversão do formato da matriz para coincidir com a disposição da sequência dos LED's
     for(int i = 4; i>=0; i--){
       for(int j = 4; j>=0; j--){
         if(i%2==0){
@@ -111,8 +112,10 @@ void npWrite2(uint8_t matriz[5][5][3]){
         }
       }
     }
+    sleep_us(100); // Espera 100us, sinal de RESET do datasheet.
 }
-void npClear2(){
+
+void npClear2(){ //Faz o mesmo que o npWrite2, porém para desligar os LED's
     uint8_t x=0;
     for(int i = 0; i<25; i++){
         pio_sm_put_blocking(np_pio, sm, x);
