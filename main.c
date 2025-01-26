@@ -4,6 +4,7 @@
 #include "matriz_rgb.h"
 #include "animation2.h"
 #include "animation9.h"
+#include "animationB.h"
 #include "animationC.h"
 
 int main()
@@ -38,6 +39,10 @@ int main()
         case 'A':
             printf("Botão A apertado\n");
             npClear();
+            break;
+        case 'B':
+            printf("Botão B apertado\n");
+            animar_desenhos_B();
             break;
         case 'C':
             printf("Botão C apertado\n");
