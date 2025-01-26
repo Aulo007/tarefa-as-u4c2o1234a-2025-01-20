@@ -20,13 +20,11 @@ void animar_desenhos_D(void){
   while(true){
     tecla = keypad_read();
     if((tecla != 'D')&&(tecla !='X')){
-        npClear2();
         break;
     }
     for(int i = 0;i<15;i++){
       tecla = keypad_read();
         if((tecla != 'D')&&(tecla !='X')){
-          npClear2();
           break;
         }
         npWrite2(matrizD);
