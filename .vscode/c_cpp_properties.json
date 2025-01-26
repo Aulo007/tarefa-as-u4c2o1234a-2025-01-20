@@ -4,7 +4,7 @@
             "name": "Pico",
             "includePath": [
                 "${workspaceFolder}/**",
-              
+
 
                 "${userHome}/.pico-sdk/sdk/2.1.0/**"
             ],
@@ -14,7 +14,6 @@
             ],
             "defines": [],
             "compilerPath": "${userHome}/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-gcc.exe",
-
             "compileCommands": "${workspaceFolder}/build/compile_commands.json",
             "cStandard": "c17",
             "cppStandard": "c++14",

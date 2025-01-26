@@ -32,7 +32,6 @@
             },
             "problemMatcher": [],
             "windows": {
-
                 "command": "${env:USERPROFILE}/.pico-sdk/picotool/2.1.0/picotool/picotool.exe"
             }
         },

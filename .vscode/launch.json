@@ -16,6 +16,8 @@
                 "target/${command:raspberry-pi-pico.getTarget}.cfg"
             ],
 
+
+
             "svdFile": "${userHome}/.pico-sdk/sdk/2.1.0/src/${command:raspberry-pi-pico.getChip}/hardware_regs/${command:raspberry-pi-pico.getChipUppercase}.svd",
 
             "runToEntryPoint": "main",
@@ -67,7 +69,9 @@
             },
             "preLaunchTask": "Flash",
 
+
             "svdPath": "${userHome}/.pico-sdk/sdk/2.1.0/src/${command:raspberry-pi-pico.getChip}/hardware_regs/${command:raspberry-pi-pico.getChipUppercase}.svd"
+
 
         },
     ]
