@@ -20,17 +20,14 @@ void animar_desenhos_B(void){
   while(true){
     tecla = keypad_read();
     if((tecla != 'B')&&(tecla !='X')){
-        npClear2();
         break;
     }
     for(int i = 0;i<15;i++){
       tecla = keypad_read();
         if((tecla != 'B')&&(tecla !='X')){
-          npClear2();
           break;
         }
         npWrite2(matrizB);
-        sleep_ms(200);
     }
   }
 }
