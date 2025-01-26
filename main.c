@@ -2,13 +2,16 @@
 #include "pico/stdlib.h"
 #include "keypad.h"
 #include "matriz_rgb.h"
+#include "animacao_6.h"
 #include "animation2.h"
+#include "animation7.h"
 #include "animation9.h"
 #include "animationB.h"
 #include "animationC.h"
 #include "animationD.h"
 #include "menu.h"
 #include "animacao_3.h"
+
 
 MenuOption main_menu[] = {
     {'1', "Primeira animação"},
@@ -69,7 +72,7 @@ int main()
                     break;
 
                 case '3':
-
+                    animar_desenhos_1();
                     mostra_menu = true;
                     key_atual = '3';
                     break;
@@ -86,11 +89,14 @@ int main()
                     break;
                 case '6':
 
+                    animar_desenhos_6(key);
                     mostra_menu = true;
                     key_atual = '6';
                     break;
 
                 case '7':
+
+                    animar_desenhos_7(key);
 
                     mostra_menu = true;
                     key_atual = '7';
@@ -108,11 +114,6 @@ int main()
                     mostra_menu = true;
                     key_atual = '9';
                     break;
-
-        case '3':
-            printf("Botão 3 apertado\n");
-            animar_desenhos_1();
-            break;
                 case 'A':
 
                     npClear();
@@ -140,7 +141,6 @@ int main()
                 case '#':
                     mostra_menu = true;
                     key_atual = '#';
-            npClear();
                     break;
                 }
                 if (mostra_menu)

@@ -49,8 +49,7 @@ void setMatrizDeLEDSComIntensidade(int matriz[5][5][3], double intensidadeR, dou
             uint8_t g = (uint8_t)(matriz[linha][coluna][1] * intensidadeG);
             uint8_t b = (uint8_t)(matriz[linha][coluna][2] * intensidadeB);
 
-            // Usa getIndex para obter o índice correto do LED
-            uint index = getIndex(coluna, linha);
+
             uint index = getIndex(coluna, linha);
 
             // Configura o LED diretamente
