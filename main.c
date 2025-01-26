@@ -2,6 +2,7 @@
 #include "pico/stdlib.h"
 #include "keypad.h"
 #include "matriz_rgb.h"
+#include "animacao_6.h"
 
 int main()
 {
@@ -26,6 +27,11 @@ int main()
             break;
         case 'A':
             printf("Botão A apertado\n");
+            break;
+
+        case '6':
+            printf("Botão 6 apertado\n");
+            animar_desenhos_6();
             break;
         }
     }
