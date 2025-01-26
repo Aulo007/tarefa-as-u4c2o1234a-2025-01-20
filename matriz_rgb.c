@@ -49,8 +49,7 @@ void setMatrizDeLEDSComIntensidade(int matriz[5][5][3], double intensidadeR, dou
             uint8_t g = (uint8_t)(matriz[linha][coluna][1] * intensidadeG);
             uint8_t b = (uint8_t)(matriz[linha][coluna][2] * intensidadeB);
 
-            // Endereçamento linear para calcular o índice do LED
-            uint index = linha * 5 + coluna;
+            uint index = getIndex(coluna, linha);
 
             // Configura o LED diretamente
             leds[index].R = r;
@@ -59,6 +58,7 @@ void setMatrizDeLEDSComIntensidade(int matriz[5][5][3], double intensidadeR, dou
         }
     }
 }
+
 void npWrite()
 {
     // Escreve cada dado de 8-bits dos pixels em sequência no buffer da máquina PIO.
@@ -93,5 +93,27 @@ int getIndex(int x, int y)
     else
     {
         return 24 - (y * 5 + (4 - x)); // Linha ímpar (direita para esquerda).
+    }
+}
+void npWrite2(uint8_t matriz[5][5][3])
+{                     // Escreve cada elemento do formato RGB como informação de 8-bit em sequência no buffer da máquina PIO.
+    int i = 0, j = 0; // Faz ainda a conversão do formato da matriz para coincidir com a disposição da sequência dos LED's
+    for (int i = 4; i >= 0; i--)
+    {
+        for (int j = 4; j >= 0; j--)
+        {
+            if (i % 2 == 0)
+            {
+                pio_sm_put_blocking(np_pio, sm, matriz[i][j][1]);
+                pio_sm_put_blocking(np_pio, sm, matriz[i][j][0]);
+                pio_sm_put_blocking(np_pio, sm, matriz[i][j][2]);
+            }
+            else
+            {
+                pio_sm_put_blocking(np_pio, sm, matriz[i][4 - j][1]);
+                pio_sm_put_blocking(np_pio, sm, matriz[i][4 - j][0]);
+                pio_sm_put_blocking(np_pio, sm, matriz[i][4 - j][2]);
+            }
+        }
     }
 }

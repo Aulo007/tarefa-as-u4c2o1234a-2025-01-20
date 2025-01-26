@@ -6,6 +6,7 @@
 #define ROWS 5
 #define COLS 5
 #define COLORS 3
+#define PERIODO 200
 #define DESENHOS 9 // Quantidade de desenhos que terá a sua animação
 
 // FRASE: EMBARCA TECH:
@@ -100,9 +101,9 @@ void animar_desenhos_6(void)
                 return;    // Sai da animação se a tecla for diferente de '1'
             }
 
-            setMatrizDeLEDSComIntensidade(caixa_de_desenhos[i], 1, 1, 1);
+            setMatrizDeLEDSComIntensidade(caixa_de_desenhos[i], 1.0, 1, 1);
             npWrite();         // Atualiza a matriz de LEDs
-            sleep_ms(1000); // Controla o tempo entre cada quadro
+            sleep_ms(PERIODO); // Controla o tempo entre cada quadro
         }
     }
 }
