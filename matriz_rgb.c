@@ -32,19 +32,32 @@ void npInit(uint8_t pin)
     npClear();
 }
 
-
-
-void npUpdateMatrix(npLED_t matrix[5][5])
+void setMatrizDeLEDSComIntensidade(int matriz[5][5][3], double intensidadeR, double intensidadeG, double intensidadeB)
 {
+    // Validação das intensidades
+    intensidadeR = (intensidadeR < 0.0 || intensidadeR > 1.0) ? 1.0 : intensidadeR;
+    intensidadeG = (intensidadeG < 0.0 || intensidadeG > 1.0) ? 1.0 : intensidadeG;
+    intensidadeB = (intensidadeB < 0.0 || intensidadeB > 1.0) ? 1.0 : intensidadeB;
+
+    // Loop para configurar os LEDs
     for (uint8_t linha = 0; linha < 5; linha++)
     {
         for (uint8_t coluna = 0; coluna < 5; coluna++)
         {
-            uint index = linha * 5 + coluna;
-            leds[index] = matrix[linha][coluna];
+            // Calcula os valores RGB ajustados pela intensidade
+            uint8_t r = (uint8_t)(matriz[linha][coluna][0] * intensidadeR);
+            uint8_t g = (uint8_t)(matriz[linha][coluna][1] * intensidadeG);
+            uint8_t b = (uint8_t)(matriz[linha][coluna][2] * intensidadeB);
+
+            // Usa getIndex para obter o índice correto do LED
+            uint index = getIndex(coluna, linha);
+
+            // Configura o LED diretamente
+            leds[index].R = r;
+            leds[index].G = g;
+            leds[index].B = b;
         }
     }
-    npWrite();
 }
 
 void npWrite()
@@ -58,7 +71,6 @@ void npWrite()
     }
     sleep_us(100); // Espera 100us, sinal de RESET do datasheet.
 }
-
 void npClear()
 {
     for (uint i = 0; i < LED_COUNT; ++i)
@@ -71,29 +83,16 @@ void npClear()
     npWrite();
 }
 
-void setMatrizDeLEDSComIntensidade(npLED_t matrix[5][5], double intensidadeR, double intensidadeG, double intensidadeB)
-{
-    // Validação das intensidades
-    intensidadeR = (intensidadeR < 0.0 || intensidadeR > 1.0) ? 1.0 : intensidadeR;
-    intensidadeG = (intensidadeG < 0.0 || intensidadeG > 1.0) ? 1.0 : intensidadeG;
-    intensidadeB = (intensidadeB < 0.0 || intensidadeB > 1.0) ? 1.0 : intensidadeB;
-
-    // Atualiza os valores na matriz de entrada
-    for (uint8_t linha = 0; linha < 5; linha++)
-    {
-        for (uint8_t coluna = 0; coluna < 5; coluna++)
-        {
-            matrix[linha][coluna].R = (uint8_t)(matrix[linha][coluna].R * intensidadeR);
-            matrix[linha][coluna].G = (uint8_t)(matrix[linha][coluna].G * intensidadeG);
-            matrix[linha][coluna].B = (uint8_t)(matrix[linha][coluna].B * intensidadeB);
-        }
-    }
-}
-
-
-
 int getIndex(int x, int y)
 {
-    // Calcula o índice considerando o sentido da linha (par ou ímpar).
-    return (y % 2 == 0) ? 24 - (y * 5 + x) : 24 - (y * 5 + (4 - x));
+    // Se a linha for par (0, 2, 4), percorremos da esquerda para a direita.
+    // Se a linha for ímpar (1, 3), percorremos da direita para a esquerda.
+    if (y % 2 == 0)
+    {
+        return 24 - (y * 5 + x); // Linha par (esquerda para direita).
+    }
+    else
+    {
+        return 24 - (y * 5 + (4 - x)); // Linha ímpar (direita para esquerda).
+    }
 }
