@@ -62,8 +62,3 @@ target_link_libraries(main
 )
 
 pico_add_extra_outputs(main)
-
-target_include_directories(main PRIVATE
-    ${CMAKE_CURRENT_LIST_DIR}  # Diretório atual do CMakeLists.txt
-    ${CMAKE_CURRENT_LIST_DIR}/include  # Caso seus arquivos de cabeçalho estejam em um diretório 'include'
-)
