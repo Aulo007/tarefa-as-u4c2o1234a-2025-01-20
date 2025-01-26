@@ -65,26 +65,26 @@ int caixa_de_desenhos[9][ROWS][COLS][COLORS] = {
      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {243, 250, 162}, {0, 0, 0}}},
 };
 
-void animar_desenhos_9(void)
+void animar_desenhos_9(char key_de_ativacao)
 {
     while (true)
     {
         // Verifica a tecla antes de cada quadro de animação
         char key_atual = keypad_read();
-        if (key_atual != key_atual && key_atual != 'X')
+        if (key_atual != key_de_ativacao && key_atual != 'X')
         {
             npClear(); // Limpa os LEDs
-            return;    
+            return;
         }
 
         for (int i = 0; i < DESENHOS; i++)
         {
             // Verifica a tecla a cada quadro, antes de mostrar o próximo desenho
             key_atual = keypad_read();
-            if (key_atual != key_atual && key_atual != 'X')
+            if (key_atual != key_de_ativacao && key_atual != 'X')
             {
                 npClear(); // Limpa os LEDs
-                return;    
+                return;
             }
 
             setMatrizDeLEDSComIntensidade(caixa_de_desenhos[i], 1, 1, 1);

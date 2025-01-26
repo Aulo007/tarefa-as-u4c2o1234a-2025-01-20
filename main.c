@@ -28,7 +28,7 @@ int main()
 
         case '9':
             printf("Botão 9 apertado\n");
-            animar_desenhos_9();
+            animar_desenhos_9(key);
             break;
         case 'A':
             printf("Botão A apertado\n");
