@@ -72,7 +72,7 @@ int caixa_de_desenhos66[10][ROWS][COLS][COLORS] = {
      {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}}},
 };
 
-void animar_desenhos_7(char key_de_ativacao)
+void animar_desenhos_6(char key_de_ativacao)
 {
     while (true)
     {

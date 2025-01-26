@@ -84,7 +84,7 @@ int main()
 
                     break;
                 case '6':
-                    animar_desenhos_6();
+                    animar_desenhos_6(key);
                     mostra_menu = true;
                     key_atual = '6';
                     break;
