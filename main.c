@@ -10,8 +10,6 @@
 #include "animationC.h"
 #include "animationD.h"
 #include "menu.h"
-#include "animacao_3.h"
-
 
 MenuOption main_menu[] = {
     {'1', "Primeira animação"},
@@ -29,7 +27,6 @@ MenuOption main_menu[] = {
     {'D', "Ligar todos os LEDs na cor verde na intensidade de 50%"},
     {'#', "Ligar todos os LEDs na cor branca na intensidade de 20%"},
 };
-
 
 int main()
 {
@@ -72,7 +69,7 @@ int main()
                     break;
 
                 case '3':
-                    animar_desenhos_1();
+
                     mostra_menu = true;
                     key_atual = '3';
                     break;
@@ -88,16 +85,13 @@ int main()
 
                     break;
                 case '6':
-
                     animar_desenhos_6(key);
                     mostra_menu = true;
                     key_atual = '6';
                     break;
 
                 case '7':
-
                     animar_desenhos_7(key);
-
                     mostra_menu = true;
                     key_atual = '7';
                     break;
@@ -150,5 +144,6 @@ int main()
                 }
             }
         }
+
     } while (true);
 }
