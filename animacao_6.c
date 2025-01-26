@@ -10,7 +10,7 @@
 #define DESENHOS 9 // Quantidade de desenhos que terá a sua animação
 
 // FRASE: EMBARCA TECH:
-int caixa_de_desenhos66[10][ROWS][COLS][COLORS] = {
+int caixa_de_desenhos6[10][ROWS][COLS][COLORS] = {
     {{{0, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {0, 0, 0}},
      {{0, 0, 0}, {255, 0, 0}, {0, 0, 0}, {255, 0, 0}, {0, 0, 0}},
      {{0, 0, 0}, {255, 0, 0}, {0, 0, 0}, {255, 0, 0}, {0, 0, 0}},
