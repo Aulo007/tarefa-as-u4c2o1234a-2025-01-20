@@ -35,7 +35,9 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(main main.c keypad.c matriz_rgb.c animation9.c menu.c)
+
+add_executable(main main.c keypad.c matriz_rgb.c animation9.c animation2.c animationC.c animationB.c animationD.c menu.c)
+
 
 pico_set_program_name(main "main")
 pico_set_program_version(main "0.1")
@@ -62,4 +64,3 @@ target_link_libraries(main
 )
 
 pico_add_extra_outputs(main)
-

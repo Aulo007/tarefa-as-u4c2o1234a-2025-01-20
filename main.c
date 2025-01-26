@@ -2,7 +2,11 @@
 #include "pico/stdlib.h"
 #include "keypad.h"
 #include "matriz_rgb.h"
+#include "animation2.h"
 #include "animation9.h"
+#include "animationB.h"
+#include "animationC.h"
+#include "animationD.h"
 #include "menu.h"
 
 MenuOption main_menu[] = {
@@ -44,6 +48,7 @@ int main()
         if (key != key_atual && key != 'X')
         {
 
+
             if (menu_is_valid_option(main_menu, sizeof(main_menu) / sizeof(MenuOption), key))
             {
                 switch (key)
@@ -55,7 +60,8 @@ int main()
                     break;
 
                 case '2':
-
+                    
+                    animar_desenhos_2();
                     mostra_menu = true;
                     key_atual = '2';
                     break;
@@ -135,7 +141,6 @@ int main()
                     mostra_menu = false;
                 }
             }
-        }
 
     } while (true);
 }
