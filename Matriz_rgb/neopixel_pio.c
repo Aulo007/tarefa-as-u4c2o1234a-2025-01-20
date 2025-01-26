@@ -3,7 +3,6 @@
 #include "hardware/pio.h"
 #include "hardware/clocks.h"
 
-// Biblioteca gerada pelo arquivo .pio durante compilação.
 #include "ws2818b.pio.h"
 
 #define ROW1 6
@@ -15,7 +14,6 @@
 #define COL3 12
 #define COL4 13
 
-// Definição do número de LEDs e pino.
 #define LED_COUNT 25
 #define LED_PIN 15
 
@@ -25,7 +23,7 @@ struct pixel_t
   uint8_t G, R, B; // Três valores de 8-bits compõem um pixel.
 };
 typedef struct pixel_t pixel_t;
-typedef pixel_t npLED_t; // Mudança de nome de "struct pixel_t" para "npLED_t" por clareza.
+typedef pixel_t npLED_t; 
 
 // Declaração do buffer de pixels que formam a matriz.
 npLED_t leds[LED_COUNT];
@@ -89,7 +87,7 @@ void npWrite()
     pio_sm_put_blocking(np_pio, sm, leds[i].R);
     pio_sm_put_blocking(np_pio, sm, leds[i].B);
   }
-  sleep_us(100); // Espera 100us, sinal de RESET do datasheet.
+  sleep_us(100);  
 }
 
 // Função para converter a posição do matriz para uma posição do vetor.
@@ -154,7 +152,7 @@ int readKeypad()
     if (gpio_get(COL4) == 0)
       return 4 + i * 4;
   }
-  return 0; // Nenhuma tecla pressionada
+  return 0;
 }
 
 int main()
