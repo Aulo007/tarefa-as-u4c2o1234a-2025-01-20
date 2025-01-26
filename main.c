@@ -94,6 +94,12 @@ int main()
         case '#':
             printf("Ligando todos os leds na cor branca na intensidade de 20%... \n");
             break;
+
+            if (mostra_menu)
+            {
+                menu_display(main_menu, sizeof(main_menu) / sizeof(MenuOption));
+                mostra_menu = false;
+            }
         }
 
     } while (true);
