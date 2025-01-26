@@ -74,17 +74,17 @@ void animar_desenhos_9(void)
         if (key_atual != key_atual && key_atual != 'X')
         {
             npClear(); // Limpa os LEDs
-            return;    
+            break;    
         }
 
         for (int i = 0; i < DESENHOS; i++)
         {
             // Verifica a tecla a cada quadro, antes de mostrar o próximo desenho
             key_atual = keypad_read();
-            if (key_atual != '1' && key_atual != 'X')
+            if (key_atual != key_atual && key_atual != 'X')
             {
                 npClear(); // Limpa os LEDs
-                return;    // Sai da animação se a tecla for diferente de '1'
+                break;    
             }
 
             setMatrizDeLEDSComIntensidade(caixa_de_desenhos[i], 1, 1, 1);
