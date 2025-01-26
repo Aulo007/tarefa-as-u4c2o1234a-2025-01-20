@@ -15,7 +15,6 @@ uint8_t matrizB[5][5][3] =
 
 void animar_desenhos_B(void){
 
-  int i=0,j=0,k=0;
   char tecla;
 
   npWrite2(matrizB); //"Imprime" nos LED's como na 'matrizB'
