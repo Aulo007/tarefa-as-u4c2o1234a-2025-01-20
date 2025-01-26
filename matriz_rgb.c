@@ -114,14 +114,3 @@ void npWrite2(uint8_t matriz[5][5][3]){ // Escreve cada elemento do formato RGB 
     }
     sleep_us(100); // Espera 100us, sinal de RESET do datasheet.
 }
-
-void npClear2(){ //Faz o mesmo que o npWrite2, porém para desligar os LED's
-    uint8_t x=0;
-    for(int i = 0; i<25; i++){
-        pio_sm_put_blocking(np_pio, sm, x);
-        pio_sm_put_blocking(np_pio, sm, x);
-        pio_sm_put_blocking(np_pio, sm, x);
-    }
-    sleep_us(100); // Espera 100us, sinal de RESET do datasheet.
-
-}
