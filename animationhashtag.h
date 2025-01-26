@@ -6,8 +6,8 @@
 #define COLORS 3
 
 // Definição da caixa de desenhos
-extern int caixa_de_desenhos_hashtag[1][ROWS][COLS][COLORS];
+extern uint8_t matrizhashtag[5][5][3];
 // Definição da função de animar desenhos
-void animar_desenhos_hashtag(char key_de_ativacao);
+void animar_desenhos_hashtag(void);
 
 #endif // ANIMATIONHASHTAG_H

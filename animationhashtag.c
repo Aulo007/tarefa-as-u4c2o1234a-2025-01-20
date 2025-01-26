@@ -9,38 +9,25 @@
 #define PERIODO 200 // Isso é o equivalente a 5 frames, uma vez que 1000/200 = 5
 #define DESENHOS 1  // Quantidade de desenhos que terá a sua animação
 
-int caixa_de_desenhos_hashtag[1][ROWS][COLS][COLORS] = {
-    {{{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}},
-     {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}},
-     {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}},
-     {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}},
-     {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}}}};
+uint8_t matrizhashtag[5][5][3] = {
+    {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}},
+    {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}},
+    {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}},
+    {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}},
+    {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}}};
 
-void animar_desenhos_hashtag(char key_de_ativacao)
+void animar_desenhos_hashtag(void)
 {
+
+    char tecla;
+
+    npWrite2(matrizhashtag); //"Imprime" nos LED's como na 'matrizhashtag'
     while (true)
     {
-        // Verifica a tecla antes de cada quadro de animação
-        char key_atual = keypad_read();
-        if (key_atual != key_de_ativacao && key_atual != 'X')
+        tecla = keypad_read(); // Verifica qual tecla é precionada constantemente para poder interromper a função
+        if ((tecla != '#') && (tecla != 'X'))
         {
-            npClear(); // Limpa os LEDs
-            return;
-        }
-
-        for (int i = 0; i < DESENHOS; i++)
-        {
-            // Verifica a tecla a cada quadro, antes de mostrar o próximo desenho
-            key_atual = keypad_read();
-            if (key_atual != key_de_ativacao && key_atual != 'X')
-            {
-                npClear(); // Limpa os LEDs
-                return;
-            }
-
-            setMatrizDeLEDSComIntensidade(caixa_de_desenhos[i], 0.2, 0.2, 0.2);
-            npWrite();         // Atualiza a matriz de LEDs
-            sleep_ms(PERIODO); // Controla o tempo entre cada quadro
+            break;
         }
     }
 }
