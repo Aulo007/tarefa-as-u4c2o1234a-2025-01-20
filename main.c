@@ -40,65 +40,68 @@ int main()
     do
     {
         key = keypad_read();
-        switch (key)
+        if (menu_is_valid_option(main_menu, sizeof(main_menu) / sizeof(MenuOption), key))
         {
-        case '1':
-            printf("Tocando primeira animação... \n");
-            break;
-
-        case '2':
-            printf("Tocando segunda animação... \n");
-            break;
-
-        case '3':
-            printf("Tocando terceira animação... \n");
-            break;
-        case '4':
-            printf("Tocando quarta animação... \n");
-            break;
-        case '5':
-            printf("Tocando quinta animação... \n");
-            break;
-        case '6':
-            printf("Tocando sexta animação... \n");
-            break;
-
-        case '7':
-            printf("Tocanodo sétima animação... \n");
-            break;
-
-        case '8':
-            printf("Tocando oitava animação... \n");
-            break;
-
-        case '9':
-            printf("Tocanodi nona animação... \n");
-            animar_desenhos_9(key);
-            break;
-        case 'A':
-            printf("Desliganod os leds... n");
-            npClear();
-            break;
-
-        case 'B':
-            printf("Ligando todos os leds na cor azul na intensidade máxima... \n");
-            break;
-
-        case 'C':
-            printf("Ligando todos os leds na cor vermelha na intensidade de 80%... \n");
-            break;
-
-        case 'D':
-            printf("Ligando todos os leds na cor verde na intensidade de 50%... \n");
-            break;
-        case '#':
-            printf("Ligando todos os leds na cor branca na intensidade de 20%... \n");
-            break;
-
-            if (mostra_menu)
+            switch (key)
             {
-                menu_display(main_menu, sizeof(main_menu) / sizeof(MenuOption));
-                mostra_menu = false;
+            case '1':
+                printf("Tocando primeira animação... \n");
+                break;
+
+            case '2':
+                printf("Tocando segunda animação... \n");
+                break;
+
+            case '3':
+                printf("Tocando terceira animação... \n");
+                break;
+            case '4':
+                printf("Tocando quarta animação... \n");
+                break;
+            case '5':
+                printf("Tocando quinta animação... \n");
+                break;
+            case '6':
+                printf("Tocando sexta animação... \n");
+                break;
+
+            case '7':
+                printf("Tocanodo sétima animação... \n");
+                break;
+
+            case '8':
+                printf("Tocando oitava animação... \n");
+                break;
+
+            case '9':
+                printf("Tocanodi nona animação... \n");
+                animar_desenhos_9(key);
+                break;
+            case 'A':
+                printf("Desliganod os leds... n");
+                npClear();
+                break;
+
+            case 'B':
+                printf("Ligando todos os leds na cor azul na intensidade máxima... \n");
+                break;
+
+            case 'C':
+                printf("Ligando todos os leds na cor vermelha na intensidade de 80%... \n");
+                break;
+
+            case 'D':
+                printf("Ligando todos os leds na cor verde na intensidade de 50%... \n");
+                break;
+            case '#':
+                printf("Ligando todos os leds na cor branca na intensidade de 20%... \n");
+                break;
+
+                if (mostra_menu)
+                {
+                    menu_display(main_menu, sizeof(main_menu) / sizeof(MenuOption));
+                    mostra_menu = false;
+                }
             }
         }
 
