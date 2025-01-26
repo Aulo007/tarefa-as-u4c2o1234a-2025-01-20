@@ -35,7 +35,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(main main.c keypad.c matriz_rgb.c)
+add_executable(main main.c keypad.c matriz_rgb.c animacao_3.c)
 
 pico_set_program_name(main "main")
 pico_set_program_version(main "0.1")
@@ -63,3 +63,7 @@ target_link_libraries(main
 
 pico_add_extra_outputs(main)
 
+target_include_directories(main PRIVATE
+    ${CMAKE_CURRENT_LIST_DIR}  # Diretório atual do CMakeLists.txt
+    ${CMAKE_CURRENT_LIST_DIR}/include  # Caso seus arquivos de cabeçalho estejam em um diretório 'include'
+)

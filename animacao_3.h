@@ -1,16 +1,13 @@
-#ifndef ANIMATION3_H
-#define ANIMATION3_H
+#ifndef ANIMATION_3_H
+#define ANIMATION_3_H
 
-#include <stdint.h>
+#define ROWS 5
+#define COLS 5
+#define COLORS 3
 
-// Define a estrutura para controlar a matriz de LEDs
-typedef struct {
-    uint8_t red;     // Valor do componente vermelho (0-255)
-    uint8_t green;   // Valor do componente verde (0-255)
-    uint8_t blue;    // Valor do componente azul (0-255)
-} LED;
+// Definição da caixa de desenhos
+extern int caixa_de_desenhos[9][ROWS][COLS][COLORS];
+// Definição da função de animar desenhos
+void animar_desenhos_1(void);
 
-// Função para executar a animação 3
-void animation3(LED matrix[5][5]);
-
-#endif // ANIMATION3_H
+#endif // ANIMATION_3_H

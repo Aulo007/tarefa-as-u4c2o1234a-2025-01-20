@@ -3,17 +3,17 @@
 
 #include <stdint.h>
 
-// Definição do pixel/LED
-typedef struct
-{
-    uint8_t G, R, B;
+typedef struct {
+    uint8_t R;
+    uint8_t G;
+    uint8_t B;
 } npLED_t;
 
-
 void npInit(uint8_t pin);
-void npClear();
+void setMatrizDeLEDSComIntensidade(LED matrix[5][5], double intensidadeR, double intensidadeG, double intensidadeB);
+void npUpdateMatrix(LED matrix[5][5]);
 void npWrite();
-void setMatrizDeLEDSComIntensidade(int matriz[5][5][3], double intensidadeR, double intensidadeG, double intensidadeB);
+void npClear();
 int getIndex(int x, int y);
 
-#endif // MATRIZ_RGB_H
+#endif
