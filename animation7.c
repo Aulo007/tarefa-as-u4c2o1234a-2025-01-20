@@ -87,7 +87,7 @@ void animar_desenhos_7(char key_de_ativacao)
                 return;
             }
 
-            setMatrizDeLEDSComIntensidade(caixa_de_desenhos[i], 1, 1, 1);
+            setMatrizDeLEDSComIntensidade(caixa_de_desenhos7[i], 1, 1, 1);
             npWrite();         // Atualiza a matriz de LEDs
             sleep_ms(PERIODO); // Controla o tempo entre cada quadro
         }
