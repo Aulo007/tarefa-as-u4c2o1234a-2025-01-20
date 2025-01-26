@@ -37,23 +37,64 @@ int main()
     char key = 'X';
 
     npWrite(); // Escreve os dados nos LEDs.
-    do 
+    do
     {
         key = keypad_read();
         switch (key)
         {
         case '1':
-            printf("Botão 1 apertado\n");
+            printf("Tocando primeira animação... \n");
+            break;
+
+        case '2':
+            printf("Tocando segunda animação... \n");
+            break;
+
+        case '3':
+            printf("Tocando terceira animação... \n");
+            break;
+        case '4':
+            printf("Tocando quarta animação... \n");
+            break;
+        case '5':
+            printf("Tocando quinta animação... \n");
+            break;
+        case '6':
+            printf("Tocando sexta animação... \n");
+            break;
+
+        case '7':
+            printf("Tocanodo sétima animação... \n");
+            break;
+
+        case '8':
+            printf("Tocando oitava animação... \n");
             break;
 
         case '9':
-            printf("Botão 9 apertado\n");
+            printf("Tocanodi nona animação... \n");
             animar_desenhos_9(key);
             break;
         case 'A':
-            printf("Botão A apertado\n");
+            printf("Desliganod os leds... n");
             npClear();
             break;
+
+        case 'B':
+            printf("Ligando todos os leds na cor azul na intensidade máxima... \n");
+            break;
+
+        case 'C':
+            printf("Ligando todos os leds na cor vermelha na intensidade de 80%... \n");
+            break;
+
+        case 'D':
+            printf("Ligando todos os leds na cor verde na intensidade de 50%... \n");
+            break;
+        case '#':
+            printf("Ligando todos os leds na cor branca na intensidade de 20%... \n");
+            break;
         }
+
     } while (true);
 }
