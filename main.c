@@ -23,7 +23,8 @@ MenuOption main_menu[] = {
     {'B', "Ligar todos os LEDs na cor azul na intensidade máxima"},
     {'C', "Ligar todos os LEDs na cor vermelha na intensidade de 80%"},
     {'D', "Ligar todos os LEDs na cor verde na intensidade de 50%"},
-    {'#', "Ligar todos os LEDs na cor branca na intensidade de 20%"},};
+    {'#', "Ligar todos os LEDs na cor branca na intensidade de 20%"},
+};
 
 int main()
 {
@@ -48,7 +49,6 @@ int main()
         if (key != key_atual && key != 'X')
         {
 
-
             if (menu_is_valid_option(main_menu, sizeof(main_menu) / sizeof(MenuOption), key))
             {
                 switch (key)
@@ -60,7 +60,7 @@ int main()
                     break;
 
                 case '2':
-                    
+
                     animar_desenhos_2();
                     mostra_menu = true;
                     key_atual = '2';
@@ -141,6 +141,7 @@ int main()
                     mostra_menu = false;
                 }
             }
+        }
 
     } while (true);
 }
