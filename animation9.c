@@ -71,10 +71,10 @@ void animar_desenhos_9(void)
     {
         // Verifica a tecla antes de cada quadro de animação
         char key_atual = keypad_read();
-        if (key_atual != '1' && key_atual != 'X')
+        if (key_atual != key_atual && key_atual != 'X')
         {
             npClear(); // Limpa os LEDs
-            return;    // Sai da animação se a tecla for diferente de '1'
+            return;    
         }
 
         for (int i = 0; i < DESENHOS; i++)
