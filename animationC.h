@@ -1,5 +1,5 @@
-#ifndef ANIMATION2_H
-#define ANIMATION2_H
+#ifndef ANIMATIONC_H
+#define ANIMATIONC_H
 
 extern uint8_t matrizC[5][5][3];
 
