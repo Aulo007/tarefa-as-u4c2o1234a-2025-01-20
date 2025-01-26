@@ -214,6 +214,7 @@ uint8_t matriz2[15][5][5][3] = {
 void animar_desenhos_2(void){
 
   char tecla;
+  bool ok = true;
 
   /*Conjunto de linhas que permitem a conversão dos index de vetores para a disposição matrical como acima
   int i=0,j=0,k=0;
@@ -225,14 +226,15 @@ void animar_desenhos_2(void){
     }
   }*/
 
-  while(true){
+  while(ok){
     for(int i = 0;i<15;i++){
+      npWrite2(matriz2[i]); //A cada ciclo do laço de repetição "imprime" um sprite
+      sleep_ms(200); //Espera de 200ms para que o FPS seja 5
       tecla = keypad_read(); //Verifica qual tecla é precionada constantemente para poder interromper a animação
-        if((tecla != '2')&&(tecla !='X')){
-          break;
-        }
-        npWrite2(matriz2[i]); //A cada ciclo do laço de repetição "imprime" um sprite
-        sleep_ms(200); //Espera de 200ms para que o FPS seja 5
+      if((tecla != '2')&&(tecla !='X')){
+        ok = false;
+        break;
+      }
     }
   }
 }
