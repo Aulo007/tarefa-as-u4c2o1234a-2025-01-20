@@ -114,19 +114,19 @@ int main()
                     break;
 
                 case 'B':
-
+                    animar_desenhos_B();
                     mostra_menu = true;
                     key_atual = 'B';
                     break;
 
                 case 'C':
-
+                    animar_desenhos_C();
                     mostra_menu = true;
                     key_atual = 'C';
                     break;
 
                 case 'D':
-
+                    animar_desenhos_D();
                     mostra_menu = true;
                     key_atual = 'D';
                     break;
