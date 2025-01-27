@@ -87,9 +87,10 @@ Todas as funcionalidades foram rigorosamente testadas para garantir precisão e 
 
 ---
 
-## Licença  
+## Licença
 
-Este projeto está licenciado sob a **Licença MIT**, permitindo o uso, modificação e distribuição de acordo com os termos da licença.  
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
 
 ---
 
