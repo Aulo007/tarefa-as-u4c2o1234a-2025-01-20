@@ -134,7 +134,7 @@ int main()
                     key_atual = 'D';
                     break;
                 case '#':
-                    animar_desenhos_hashtag();
+                    animar_desenhos_hashtag(key);
                     mostra_menu = true;
                     key_atual = '#';
                     break;

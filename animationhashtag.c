@@ -1,33 +1,68 @@
 #include "matriz_rgb.h"
-#include "animation9.h"
+#include "animationhashtag.h"
 #include "pico/stdlib.h"
 #include "keypad.h"
 
 #define ROWS 5
 #define COLS 5
 #define COLORS 3
-#define PERIODO 200 // Isso é o equivalente a 5 frames, uma vez que 1000/200 = 5
-#define DESENHOS 1  // Quantidade de desenhos que terá a sua animação
+#define PERIODO 2000 // Isso é o equivalente a 5 frames, uma vez que 1000/200 = 5
+#define DESENHOS 4  // Quantidade de desenhos que terá a sua animação
 
-uint8_t matrizhashtag[5][5][3] = {
-    {{51, 51, 51}, {51, 51, 51}, {51, 51, 51}, {51, 51, 51}, {51, 51, 51}},
-    {{51, 51, 51}, {51, 51, 51}, {51, 51, 51}, {51, 51, 51}, {51, 51, 51}},
-    {{51, 51, 51}, {51, 51, 51}, {51, 51, 51}, {51, 51, 51}, {51, 51, 51}},
-    {{51, 51, 51}, {51, 51, 51}, {51, 51, 51}, {51, 51, 51}, {51, 51, 51}},
-    {{51, 51, 51}, {51, 51, 51}, {51, 51, 51}, {51, 51, 51}, {51, 51, 51}}};
-
-void animar_desenhos_hashtag(void)
+int caixa_de_desenhos_hashtag[4][ROWS][COLS][COLORS] = {
 {
+{{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}},
+{{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}},
+{{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}},
+{{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}},
+{{255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}, {255, 0, 0}}
+},
 
-    char tecla;
 
-    npWrite2(matrizhashtag); //"Imprime" nos LED's como na 'matrizhashtag'
+    {{{0, 255, 0}, {0, 255, 0}, {0, 255, 0}, {0, 255, 0}, {0, 255, 0}},
+     {{0, 255, 0}, {0, 255, 0}, {0, 255, 0}, {0, 255, 0}, {0, 255, 0}},
+     {{0, 255, 0}, {0, 255, 0}, {0, 255, 0}, {0, 255, 0}, {0, 255, 0}},
+     {{0, 255, 0}, {0, 255, 0}, {0, 255, 0}, {0, 255, 0}, {0, 255, 0}},
+     {{0, 255, 0}, {0, 255, 0}, {0, 255, 0}, {0, 255, 0}, {0, 255, 0}}},
+
+    {{{0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}},
+     {{0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}},
+     {{0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}},
+     {{0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}},
+     {{0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}, {0, 0, 255}}},
+
+    {{{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}},
+     {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}},
+     {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}},
+     {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}},
+     {{255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}, {255, 255, 255}}}
+};
+
+void animar_desenhos_hashtag(char key_de_ativacao)
+{
     while (true)
     {
-        tecla = keypad_read(); // Verifica qual tecla é precionada constantemente para poder interromper a função
-        if ((tecla != '#') && (tecla != 'X'))
+        // Verifica a tecla antes de cada quadro de animação
+        char key_atual = keypad_read();
+        if (key_atual != key_de_ativacao && key_atual != 'X')
         {
-            break;
+            npClear(); // Limpa os LEDs
+            return;
+        }
+
+        for (int i = 0; i < DESENHOS; i++)
+        {
+            // Verifica a tecla a cada quadro, antes de mostrar o próximo desenho
+            key_atual = keypad_read();
+            if (key_atual != key_de_ativacao && key_atual != 'X')
+            {
+                npClear(); // Limpa os LEDs
+                return;
+            }
+
+            setMatrizDeLEDSComIntensidade(caixa_de_desenhos_hashtag[i], 0.01, 0.01, 0.01);
+            npWrite(); // Escreve os dados nos LEDs
+            sleep_ms(PERIODO); // Controla o tempo entre cada quadro
         }
     }
 }
