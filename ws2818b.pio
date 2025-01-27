@@ -10,6 +10,8 @@
 
 % c-sdk {
 #include "hardware/clocks.h"
+#include "ws2818b.pio.h"
+
 
 void ws2818b_program_init(PIO pio, uint sm, uint offset, uint pin, float freq) {
 
