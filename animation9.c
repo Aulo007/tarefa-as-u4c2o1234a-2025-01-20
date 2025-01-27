@@ -7,9 +7,10 @@
 #define COLS 5
 #define COLORS 3
 #define PERIODO 200 // Isso é o equivalente a 5 frames, uma vez que 1000/200 = 5
-#define DESENHOS 23  // Quantidade de desenhos que terá a sua animação
+#define DESENHOS 23 // Quantidade de desenhos que terá a sua animação
 
 int caixa_de_desenhos[23][ROWS][COLS][COLORS] = {
+
     {{{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
      {{0, 0, 0}, {255, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 255, 2}},
      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 255, 2}},
@@ -146,8 +147,7 @@ int caixa_de_desenhos[23][ROWS][COLS][COLORS] = {
      {{0, 2, 255}, {0, 2, 255}, {0, 2, 255}, {0, 2, 255}, {0, 2, 255}},
      {{0, 2, 255}, {0, 2, 255}, {0, 2, 255}, {0, 2, 255}, {0, 2, 255}},
      {{0, 2, 255}, {0, 2, 255}, {0, 2, 255}, {0, 2, 255}, {0, 2, 255}},
-     {{0, 2, 255}, {0, 2, 255}, {0, 2, 255}, {0, 2, 255}, {0, 2, 255}}}
-
+     {{0, 2, 255}, {0, 2, 255}, {0, 2, 255}, {0, 2, 255}, {0, 2, 255}}},
 };
 
 void animar_desenhos_9(char key_de_ativacao)
