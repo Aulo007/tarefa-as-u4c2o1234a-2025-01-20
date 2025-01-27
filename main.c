@@ -92,7 +92,7 @@ int main()
                     break;
 
                 case '7':
-                    animar_desenhos_7(key);
+                    animar_desenhos(key, 9, caixa_de_desenhos7);
                     mostra_menu = true;
                     key_atual = '7';
                     break;
