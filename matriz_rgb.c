@@ -45,9 +45,9 @@ void setMatrizDeLEDSComIntensidade(int matriz[5][5][3], double intensidadeR, dou
         for (uint8_t coluna = 0; coluna < 5; coluna++)
         {
             // Calcula os valores RGB ajustados pela intensidade
-            uint8_t r = (uint8_t)(matriz[linha][coluna][0] * intensidadeR);
-            uint8_t g = (uint8_t)(matriz[linha][coluna][1] * intensidadeG);
-            uint8_t b = (uint8_t)(matriz[linha][coluna][2] * intensidadeB);
+            uint8_t r = (uint8_t)(float)(matriz[linha][coluna][0] * intensidadeR);
+            uint8_t g = (uint8_t)(float)(matriz[linha][coluna][1] * intensidadeG);
+            uint8_t b = (uint8_t)(float)(matriz[linha][coluna][2] * intensidadeB);
 
             uint index = getIndex(coluna, linha);
 
