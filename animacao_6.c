@@ -1,13 +1,10 @@
 #include "matriz_rgb.h"
 #include "animacao_6.h"
 #include "pico/stdlib.h"
-#include "keypad.h"
 
 #define ROWS 5
 #define COLS 5
 #define COLORS 3
-#define PERIODO 200
-#define DESENHOS 9 // Quantidade de desenhos que terá a sua animação
 
 // FRASE: EMBARCA TECH:
 int caixa_de_desenhos6[10][ROWS][COLS][COLORS] = {
