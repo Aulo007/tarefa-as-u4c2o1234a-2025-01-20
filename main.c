@@ -86,13 +86,13 @@ int main()
 
                     break;
                 case '6':
-                    animar_desenhos_6(key);
+                    animar_desenhos(key, 6, caixa_de_desenhos6);
                     mostra_menu = true;
                     key_atual = '6';
                     break;
 
                 case '7':
-                    animar_desenhos(key, 9, caixa_de_desenhos7);
+                    animar_desenhos(key, 7, caixa_de_desenhos7);
                     mostra_menu = true;
                     key_atual = '7';
                     break;

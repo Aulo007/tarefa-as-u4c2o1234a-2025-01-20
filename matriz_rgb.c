@@ -3,6 +3,7 @@
 #include "hardware/pio.h"
 #include "hardware/clocks.h"
 #include "ws2818b.pio.h"
+#include "keypad.h"
 
 #define LED_COUNT 25
 #define PERIODO 200 // Isso é o equivalente a 5 frames, uma vez que 1000/200 = 5
