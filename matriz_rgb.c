@@ -5,6 +5,7 @@
 #include "ws2818b.pio.h"
 
 #define LED_COUNT 25
+#define PERIODO 200 // Isso é o equivalente a 5 frames, uma vez que 1000/200 = 5
 
 // Buffer de pixels global
 static npLED_t leds[LED_COUNT];
@@ -114,6 +115,35 @@ void npWrite2(uint8_t matriz[5][5][3])
                 pio_sm_put_blocking(np_pio, sm, matriz[i][4 - j][0]);
                 pio_sm_put_blocking(np_pio, sm, matriz[i][4 - j][2]);
             }
+        }
+    }
+}
+
+void animar_desenhos(char key_de_ativacao, int num_desenhos, int caixa_de_desenhos[num_desenhos][5][5][3])
+{
+    while (true)
+    {
+        // Verifica a tecla antes de cada quadro de animação
+        char key_atual = keypad_read();
+        if (key_atual != key_de_ativacao && key_atual != 'X')
+        {
+            npClear(); // Limpa os LEDs
+            return;
+        }
+
+        for (int i = 0; i < num_desenhos; i++)
+        {
+            // Verifica a tecla a cada quadro, antes de mostrar o próximo desenho
+            key_atual = keypad_read();
+            if (key_atual != key_de_ativacao && key_atual != 'X')
+            {
+                npClear(); // Limpa os LEDs
+                return;
+            }
+
+            setMatrizDeLEDSComIntensidade(caixa_de_desenhos[i], 1, 1, 1);
+            npWrite();         // Atualiza a matriz de LEDs
+            sleep_ms(PERIODO); // Controla o tempo entre cada quadro
         }
     }
 }

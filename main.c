@@ -105,7 +105,7 @@ int main()
 
                 case '9':
 
-                    animar_desenhos_9(key);
+                    animar_desenhos(key, 23, caixa_de_desenhos);
                     mostra_menu = true;
                     key_atual = '9';
                     break;
