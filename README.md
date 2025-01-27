@@ -11,6 +11,13 @@ O programa foi desenvolvido de forma colaborativa por uma equipe de nove membros
 
 ---
 
+## Link de acesso para video de ensaio
+**Status do vídeo:** Trabalhando no vídeo...  
+Após a finalização, o vídeo ensaio será disponibilizado no seguinte link:  
+[Vídeo de apresentação do projeto](URL_DO_VÍDEO)
+
+---
+
 ## Funcionalidades Implementadas  
 
 ### Animações
@@ -57,8 +64,8 @@ O programa foi desenvolvido de forma colaborativa por uma equipe de nove membros
 5. O **VSCode** criará automaticamente as pastas essenciais, como `.vscode` e `build`.
 
 6. Pronto! O ambiente está configurado, e você já pode utilizar o projeto para criar suas próprias animações.
-
 ---
+
 
 ## Autores das Implementações  
 
