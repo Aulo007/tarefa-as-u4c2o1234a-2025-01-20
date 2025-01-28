@@ -79,7 +79,7 @@ int caixa_de_desenhos[8][ROWS][COLS][COLORS] = {
 
 };
 
-void animar_desenhos_1(void)
+void animar_desenhos_3(void)
 {
     while (true)
     {
