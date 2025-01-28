@@ -2,6 +2,7 @@
 #include "pico/stdlib.h"
 #include "keypad.h"
 #include "matriz_rgb.h"
+#include "animation1.h"
 #include "animacao_6.h"
 #include "animation2.h"
 #include "animacao_3.h"
@@ -59,6 +60,7 @@ int main()
                 {
                 case '1':
 
+                    animar_desenhos(key, 5, caixa_de_desenhos1, 1, 1, 1);
                     mostra_menu = true;
                     key_atual = '1';
                     break;
