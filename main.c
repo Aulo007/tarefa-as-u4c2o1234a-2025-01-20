@@ -3,6 +3,7 @@
 #include "keypad.h"
 #include "matriz_rgb.h"
 #include "animation1.h"
+#include "animation5.h"
 #include "animacao_6.h"
 #include "animation2.h"
 #include "animacao_3.h"
@@ -83,7 +84,7 @@ int main()
                     key_atual = '4';
                     break;
                 case '5':
-
+                    animar_desenhos(key, 7, caixa_de_desenhos5, 1, 1, 1);
                     mostra_menu = true;
                     key_atual = '5';
 
