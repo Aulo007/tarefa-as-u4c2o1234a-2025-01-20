@@ -4,6 +4,7 @@
 #include "matriz_rgb.h"
 #include "animacao_6.h"
 #include "animation2.h"
+#include "animacao_3.h"
 #include "animation7.h"
 #include "animation9.h"
 #include "animationB.h"
@@ -70,7 +71,7 @@ int main()
                     break;
 
                 case '3':
-                    animar_desenhos(key, 8, caixa_de_desenhos);
+                    animar_desenhos(key, 8, caixa_de_desenhos_3);
                     mostra_menu = true;
                     key_atual = '3';
                     break;
