@@ -14,7 +14,7 @@ O programa foi desenvolvido de forma colaborativa por uma equipe de nove membros
 ## Link de acesso para video de ensaio
 **Status do vídeo:** Trabalhando no vídeo...  
 Após a finalização, o vídeo ensaio será disponibilizado no seguinte link:  
-[Vídeo de apresentação do projeto](URL_DO_VÍDEO)
+[Vídeo de apresentação do projeto](https://youtu.be/YX9e5r--lwg)
 
 ---
 
