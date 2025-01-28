@@ -2,6 +2,7 @@
 #include "pico/stdlib.h"
 #include "keypad.h"
 #include "matriz_rgb.h"
+
 #include "animation1.h"
 #include "animation4.h"
 #include "animation5.h"
@@ -34,6 +35,7 @@ MenuOption main_menu[] = {
     {'#', "Ligar todos os LEDs na cor branca na intensidade de 20%"},
 };
 
+
 int main()
 {
     // Inicializa entradas e saídas.
@@ -43,6 +45,7 @@ int main()
     npInit(15); // Usar a constante LED_PIN definida anteriormente
     keypad_init();
     npClear();
+
 
     menu_display(main_menu, sizeof(main_menu) / sizeof(MenuOption));
     bool mostra_menu = true;
