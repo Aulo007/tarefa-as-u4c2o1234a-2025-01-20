@@ -1,15 +1,12 @@
-// Converte um código hexadecimal gerado no site: https://www.piskelapp.com/
-// Para decimal em no padrão RGB.
-
 #include <stdio.h>
 
 #define MATRIX_ROWS 5
 #define MATRIX_COLS 5
 #define MATRIX_DEPTH 3
-#define NUM_FRAMES 50
+#define NUM_FRAMES 5
 
 // Função para converter valores ARGB (0xAARRGGBB) para RGB
-void convertToRGB(int argb, int rgb[3])
+void convertToRGB(unsigned int argb, int rgb[3])
 {
     rgb[2] = (argb >> 16) & 0xFF; // Red
     rgb[1] = (argb >> 8) & 0xFF;  // Green
@@ -18,39 +15,35 @@ void convertToRGB(int argb, int rgb[3])
 
 int main()
 {
-    // Matriz de entrada com os valores ARGB (mantendo sua matriz original)
-    int argb_values[NUM_FRAMES][MATRIX_ROWS * MATRIX_COLS] = {
+    // Matriz de entrada com os valores ARGB (alterado para unsigned int)
+    unsigned int argb_values[NUM_FRAMES][MATRIX_ROWS * MATRIX_COLS] = {
+        {0xff0000ff, 0xff000000, 0xff00ff00, 0xff000000, 0xffff0000,
+         0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000,
+         0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000,
+         0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000,
+         0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000},
+        {0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000,
+         0xff0000ff, 0xff000000, 0xff00ff00, 0xff000000, 0xffff0000,
+         0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000,
+         0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000,
+         0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000},
+        {0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000,
+         0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000,
+         0xff0000ff, 0xff000000, 0xff00ff00, 0xff000000, 0xffff0000,
+         0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000,
+         0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000},
+        {0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000,
+         0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000,
+         0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000,
+         0xff0000ff, 0xff000000, 0xff00ff00, 0xff000000, 0xffff0000,
+         0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000},
+        {0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000,
+         0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000,
+         0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000,
+         0xff000000, 0xff000000, 0xff000000, 0xff000000, 0xff000000,
+         0xff0000ff, 0xff000000, 0xff00ff00, 0xff000000, 0xffff0000}};
 
-        /* colocar saída do arquivo de c do piskel no formato:
-        {
-        0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,
-        0x00000000, 0xff0000ff, 0x00000000, 0x00000000, 0xff02ff00,
-        0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff02ff00,
-        0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff02ff00,
-        0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff02ff00
-        },
-        {
-        0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,
-        0x00000000, 0xff0000ff, 0x00000000, 0xff02ff00, 0xff02ff00,
-        0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff02ff00,
-        0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff02ff00,
-        0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000
-        },
-        {
-        0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,
-        0x00000000, 0xff0000ff, 0xff02ff00, 0xff02ff00, 0xff02ff00,
-        0x00000000, 0x00000000, 0x00000000, 0x00000000, 0xff02ff00,
-        0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,
-        0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000
-        }
-         */
-
-        /* Após isso usar arquivo animation9 como exemplo adptar as funções e jogar o resultado na caixa_de_desenhos
-            Se atente apenas para colocar no formato correto e mudar a quantidade de frames que usará no código*/
-
-    };
-
-    // Matriz 9x5x5x3 para armazenar os valores RGB de todos os frames
+    // Matriz para armazenar os valores RGB de todos os frames
     int rgb_matrix[NUM_FRAMES][MATRIX_ROWS][MATRIX_COLS][MATRIX_DEPTH];
 
     // Converter cada frame
@@ -93,7 +86,6 @@ int main()
                 printf(",");
             printf("\n");
         }
-
         printf("},\n\n");
     }
 
