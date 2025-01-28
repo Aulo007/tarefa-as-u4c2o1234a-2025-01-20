@@ -71,7 +71,7 @@ int main()
                     break;
 
                 case '3':
-                    animar_desenhos(key, 8, caixa_de_desenhos_3);
+                    animar_desenhos(key, 8, caixa_de_desenhos_3, 1, 1, 1);
                     mostra_menu = true;
                     key_atual = '3';
                     break;
@@ -87,13 +87,13 @@ int main()
 
                     break;
                 case '6':
-                    animar_desenhos(key, 10, caixa_de_desenhos6);
+                    animar_desenhos(key, 10, caixa_de_desenhos6, 1, 1, 1);
                     mostra_menu = true;
                     key_atual = '6';
                     break;
 
                 case '7':
-                    animar_desenhos(key, 9, caixa_de_desenhos7);
+                    animar_desenhos(key, 9, caixa_de_desenhos7, 1, 1, 1);
                     mostra_menu = true;
                     key_atual = '7';
                     break;
@@ -106,7 +106,7 @@ int main()
 
                 case '9':
 
-                    animar_desenhos(key, 23, caixa_de_desenhos);
+                    animar_desenhos(key, 23, caixa_de_desenhos, 1, 1, 1);
                     mostra_menu = true;
                     key_atual = '9';
                     break;
@@ -135,7 +135,7 @@ int main()
                     key_atual = 'D';
                     break;
                 case '#':
-                    animar_desenhos_hashtag(key);
+                    animar_desenhos(key, 1, caixa_de_desenhos_hashtag, 0.2, 0.2, 0.2);
                     mostra_menu = true;
                     key_atual = '#';
                     break;

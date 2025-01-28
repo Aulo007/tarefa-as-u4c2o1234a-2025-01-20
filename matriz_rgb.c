@@ -120,7 +120,7 @@ void npWrite2(uint8_t matriz[5][5][3])
     }
 }
 
-void animar_desenhos(char key_de_ativacao, int num_desenhos, int caixa_de_desenhos[num_desenhos][5][5][3])
+void animar_desenhos(char key_de_ativacao, int num_desenhos, int caixa_de_desenhos[num_desenhos][5][5][3], double intensidade_r, double intensidade_g, double intensidade_b)
 {
     while (true)
     {
@@ -142,7 +142,7 @@ void animar_desenhos(char key_de_ativacao, int num_desenhos, int caixa_de_desenh
                 return;
             }
 
-            setMatrizDeLEDSComIntensidade(caixa_de_desenhos[i], 1, 1, 1);
+            setMatrizDeLEDSComIntensidade(caixa_de_desenhos[i], intensidade_r, intensidade_g, intensidade_b);
             npWrite();         // Atualiza a matriz de LEDs
             sleep_ms(PERIODO); // Controla o tempo entre cada quadro
         }
