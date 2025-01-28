@@ -6,9 +6,6 @@
 #define COLORS 3
 
 // Definição da caixa de desenhos
-extern int caixa_de_desenhos[8][ROWS][COLS][COLORS];
-// Definição da função de animar desenhos
-void animar_desenhos_1(void);
+extern int caixa_de_desenhos_3[8][ROWS][COLS][COLORS];
 
 #endif // ANIMATION_3_H
-

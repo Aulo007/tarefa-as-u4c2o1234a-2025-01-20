@@ -70,12 +70,12 @@ int main()
                     break;
 
                 case '3':
-
+                    animar_desenhos(key, 8, caixa_de_desenhos);
                     mostra_menu = true;
                     key_atual = '3';
                     break;
                 case '4':
-                    animar_desenhos_3();
+
                     mostra_menu = true;
                     key_atual = '4';
                     break;
