@@ -7,6 +7,7 @@
 #include "animation5.h"
 #include "animacao_6.h"
 #include "animation2.h"
+#include "animation8.h"
 #include "animacao_3.h"
 #include "animation7.h"
 #include "animation9.h"
@@ -103,7 +104,7 @@ int main()
                     break;
 
                 case '8':
-
+                    animar_desenhos(key, 12, caixa_de_desenhos8, 1, 1, 1);
                     mostra_menu = true;
                     key_atual = '8';
                     break;
