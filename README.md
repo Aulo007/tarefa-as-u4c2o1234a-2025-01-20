@@ -71,17 +71,17 @@ Após a finalização, o vídeo ensaio será disponibilizado no seguinte link:
 
 | **Funcionalidade**                            | **Responsável**                      |  
 |-----------------------------------------------|--------------------------------------|  
-| **Animação 1**                                | Andréa Carolina Santos Souza         |  
+| **Animação 1**                                | Aulo Cezar Ferreira dos Anjos Filho  |  
 | **Animação 2**                                | Guilherme Santos Campos              |  
 | **Animação 3**                                | Elioenai Santana                     |  
-| **Animação 4**                                | Uanderson Rocha Santos               |  
-| **Animação 5**                                | Diego dos Santos Fonseca             |  
+| **Animação 4**                                | Aulo Cezar Ferreira dos Anjos Filho  |  
+| **Animação 5**                                | Aulo Cezar Ferreira dos Anjos Filho  |  
 | **Animação 6**                                | Kauan Mateus Vidal Brito             |  
 | **Animação 7**                                | Igor Almeida Oliveira                |  
-| **Animação 8**                                | Alex Gabriel Alves dos Santos        |  
+| **Animação 8**                                | Aulo Cezar Ferreira dos Anjos Filho  |  
 | **Animação 9**                                | Aulo Cezar Ferreira dos Anjos Filho  |  
 | **Desligar todos os LEDs**                    | Aulo Cezar Ferreira dos Anjos Filho  |  
-| **Ligar LEDs na cor azul** (intensidade máxima) | Guilherme Santos Campos             |  
+| **Ligar LEDs na cor azul** (intensidade máxima) | Guilherme Santos Campos            |  
 | **Ligar LEDs na cor vermelha** (80% de intensidade) | Guilherme Santos Campos          |  
 | **Ligar LEDs na cor verde** (50% de intensidade) | Guilherme Santos Campos           |  
 | **Ligar LEDs na cor branca** (20% de intensidade) | Aulo Cezar Ferreira dos Anjos Filho |  
