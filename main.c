@@ -75,7 +75,7 @@ int main()
                     key_atual = '3';
                     break;
                 case '4':
-
+                    animar_desenhos_3();
                     mostra_menu = true;
                     key_atual = '4';
                     break;
